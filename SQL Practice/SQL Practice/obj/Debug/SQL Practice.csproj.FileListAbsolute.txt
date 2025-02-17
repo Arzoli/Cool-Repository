@@ -1,0 +1,10 @@
+C:\Users\M2303661\OneDrive - Middlesbrough College\Year 2\C#\SQL Practice\SQL Practice\bin\Debug\SQL Practice.exe.config
+C:\Users\M2303661\OneDrive - Middlesbrough College\Year 2\C#\SQL Practice\SQL Practice\bin\Debug\SQL Practice.exe
+C:\Users\M2303661\OneDrive - Middlesbrough College\Year 2\C#\SQL Practice\SQL Practice\bin\Debug\SQL Practice.pdb
+C:\Users\M2303661\OneDrive - Middlesbrough College\Year 2\C#\SQL Practice\SQL Practice\obj\Debug\SQL Practice.csproj.AssemblyReference.cache
+C:\Users\M2303661\OneDrive - Middlesbrough College\Year 2\C#\SQL Practice\SQL Practice\obj\Debug\SQL_Practice.Form1.resources
+C:\Users\M2303661\OneDrive - Middlesbrough College\Year 2\C#\SQL Practice\SQL Practice\obj\Debug\SQL_Practice.Properties.Resources.resources
+C:\Users\M2303661\OneDrive - Middlesbrough College\Year 2\C#\SQL Practice\SQL Practice\obj\Debug\SQL Practice.csproj.GenerateResource.cache
+C:\Users\M2303661\OneDrive - Middlesbrough College\Year 2\C#\SQL Practice\SQL Practice\obj\Debug\SQL Practice.csproj.CoreCompileInputs.cache
+C:\Users\M2303661\OneDrive - Middlesbrough College\Year 2\C#\SQL Practice\SQL Practice\obj\Debug\SQL Practice.exe
+C:\Users\M2303661\OneDrive - Middlesbrough College\Year 2\C#\SQL Practice\SQL Practice\obj\Debug\SQL Practice.pdb
