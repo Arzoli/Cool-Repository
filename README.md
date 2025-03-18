@@ -19,3 +19,5 @@ Data Dictionary
 Customer Retention and Churn rate, how many customers stop / continue doing business over a period of time.
 Average Order Value
 Return on investment
+Session Length
+Screens per visit / Actions per visit
