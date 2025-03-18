@@ -11,3 +11,7 @@ might be a sensible solution for farther development, as it will reduce the comp
 website, therefore increase efficiency. The reason being is that it allows for content change in a nice user-
 friendly interface, which essentially does not require programming knowledge, therefore could be done
 by content creators.
+
+DFD
+ERD
+Data Dictionary
