@@ -1,0 +1,33 @@
+1.
+CREATE TABLE [Person]
+(
+[Id]  INT IDENTITY  NOT NULL PRIMARY KEY,
+    	[Name] NVARCHAR(50) NULL, 
+    	[Age] INT NULL
+)
+
+Creates a table with the Fields ID, Name, and Age.
+2.
+INSERT INTO Person VALUES (“Peter”, 19)  
+Inserts the Records Peter and 19 into their respective fields
+3.
+DELETE FROM Person where Id  = 4786
+Removes The Records for every field for ID 4786
+4.
+SELECT * FROM  Person
+
+Selects a selected Record from the Person field
+5.
+SELECT * FROM Person WHERE Age > 18
+
+Selects a Record from the Person Table, With an age field containing a number above 18
+6.
+SELECT Name, Age FROM Person
+Selects the Name and Age Field from the Person database
+7.
+  UPDATE Person   
+   	SET Name = “Julie”,  
+   	AGE = 24
+  WHERE Id = 6785 
+
+Changes the Record for the name field of ID 6785 to Julie.
