@@ -1,0 +1,14 @@
+Create procedure [dbo].[UpdatePerson]  
+(  
+   @StdId int,  
+   @Name nvarchar (50),  
+   @Age int
+    
+)  
+as  
+begin  
+   Update Person   
+   set Name=@Name,  
+   Age=@Age
+   where Id=@StdId  
+End
