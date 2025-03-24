@@ -1,0 +1,38 @@
+private void btnLogin_Click(object sender, EventArgs e)
+        {
+            string username, password;
+            username = txtUsername.Text;
+            password = txtPassword.Text;
+
+            
+
+            try
+            {
+                SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""C:\Users\M2303661\OneDrive - Middlesbrough College\Documents\HospitalDB.mdf"";Integrated Security=True;Connect Timeout=30;");
+                string querry = "SELECT * FROM Accounts WHERE Username = '" + txtUsername.Text + "' AND Password = '" + txtPassword.Text + "'";
+                SqlDataAdapter sda = new SqlDataAdapter(querry, conn);
+
+                DataTable dtable = new DataTable();
+                sda.Fill(dtable);
+
+                if (dtable.Rows.Count > 0)
+                {
+                    username = txtUsername.Text;
+                    password = txtPassword.Text;
+                    groupBox1.Hide();
+                    groupBox2.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Invalid login details", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtUsername.Clear();
+                    txtPassword.Clear();
+
+                    txtUsername.Focus();
+                }
+
+            }
+            catch
+            {
+                MessageBox.Show("Error");
+            }
