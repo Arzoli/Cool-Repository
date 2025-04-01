@@ -1,0 +1,40 @@
+using Microsoft.AspNetCore.Mvc;
+using System.Data.SqlClient;
+
+public class BookingController : Controller
+{
+    private readonly string connectionString = "Server=YOUR_SERVER;Database=BookingDB;Trusted_Connection=True;";
+
+    [HttpPost]
+    public IActionResult Create(string name, string email, DateTime date, string notes)
+    {
+        using (SqlConnection conn = new SqlConnection(connectionString))
+        {
+            string query = "INSERT INTO Bookings (Name, Email, Date, Notes) VALUES (@Name, @Email, @Date, @Notes)";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@Name", name);
+            cmd.Parameters.AddWithValue("@Email", email);
+            cmd.Parameters.AddWithValue("@Date", date);
+            cmd.Parameters.AddWithValue("@Notes", notes);
+
+            conn.Open();
+            cmd.ExecuteNonQuery();
+        }
+
+        return RedirectToAction("Index");
+    }
+}
+
+
+private void btnBook_Click(object sender, EventArgs e)
+{
+    string name = txtName.Text;
+    string email = txtEmail.Text;
+    DateTime date = dateTimePicker.Value;
+    string notes = txtNotes.Text;
+
+    DatabaseHelper db = new DatabaseHelper();
+    db.AddBooking(name, email, date, notes);
+
+    MessageBox.Show("Booking successful!");
+}
