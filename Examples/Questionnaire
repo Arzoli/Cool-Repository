@@ -1,0 +1,74 @@
+Label: "Which programming languages do you know?"
+[ ] C#
+[ ] Python
+[ ] JavaScript
+[ ] Java
+[ ] C++
+
+[Submit Button]
+
+Label or ListBox: (Displays selected options)
+
+private void btnSubmit_Click(object sender, EventArgs e)
+{
+    List<string> selectedLanguages = new List<string>();
+
+    if (checkBoxCSharp.Checked) selectedLanguages.Add("C#");
+    if (checkBoxPython.Checked) selectedLanguages.Add("Python");
+    if (checkBoxJavaScript.Checked) selectedLanguages.Add("JavaScript");
+    if (checkBoxJava.Checked) selectedLanguages.Add("Java");
+    if (checkBoxCpp.Checked) selectedLanguages.Add("C++");
+
+    if (selectedLanguages.Count == 0)
+    {
+        MessageBox.Show("Please select at least one option.");
+        return;
+    }
+
+    string result = "You selected:\n" + string.Join("\n", selectedLanguages);
+    MessageBox.Show(result, "Your Answers");
+}
+
+
+private void btnCalculate_Click(object sender, EventArgs e)
+{
+    double carbonFootprint = 0.0;
+
+    // Transportation
+    if (checkBoxDrivesCar.Checked)
+        carbonFootprint += 2.5;
+    if (checkBoxTakesBus.Checked)
+        carbonFootprint += 1.0;
+    if (checkBoxRidesBike.Checked)
+        carbonFootprint += 0.1;
+
+    // Food
+    if (checkBoxEatsMeat.Checked)
+        carbonFootprint += 3.0;
+
+    // Flying
+    if (checkBoxFliesOften.Checked)
+        carbonFootprint += 5.0;
+
+    // Energy
+    if (checkBoxUsesGas.Checked)
+        carbonFootprint += 2.0;
+    if (checkBoxUsesSolar.Checked)
+        carbonFootprint -= 1.0; // bonus for green energy
+
+    // Waste/Recycling
+    if (!checkBoxRecycles.Checked)
+        carbonFootprint += 1.0;
+
+    // Output result
+    string message = $"Your estimated carbon footprint score is: {carbonFootprint:0.0} kg CO₂e/day";
+
+    if (carbonFootprint < 5)
+        message += "\nLow impact – great job!";
+    else if (carbonFootprint < 10)
+        message += "\nModerate impact – room for improvement.";
+    else
+        message += "\nHigh impact – consider making changes.";
+
+    MessageBox.Show(message, "Carbon Footprint Result");
+}
