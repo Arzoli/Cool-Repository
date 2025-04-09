@@ -1,0 +1,52 @@
+//Run when form is loaded.
+private void MyForm_Load(object sender, EventArgs e)
+{
+    if (ThemeManager.IsHighContrast)
+    {
+        ThemeManager.ApplyThemeToAllForms();
+    }
+}
+
+//inside static class.
+public static class ThemeManager
+{
+    public static bool IsHighContrast { get; private set; } = false;
+
+    public static void ToggleHighContrast()
+    {
+        ishighcontrast = !ishighcontrast;
+        ApplyThemeToAllForms();
+    }
+
+    public static void ApplyThemeToAllForms()
+    {
+        Color backColor, foreColor;
+
+        if (IsHighContrast)
+        {
+            backColor = Color.Black;
+            foreColor = Color.Yellow;
+        }
+        else
+        {
+            backColor = SystemColors.Control;
+            foreColor = SystemColors.ControlText;
+        }
+
+        foreach (Form form in Application.OpenForms)
+        {
+            ApplyContrast(form, backColor, foreColor);
+        }
+    }
+
+    private static void ApplyContrast(Control parent, Color backColor, Color foreColor)
+    {
+        parent.BackColor = backColor;
+        parent.ForeColor = foreColor;
+
+        foreach (Control ctrl in parent.Controls)
+        {
+            ApplyContrast(ctrl, backColor, foreColor);
+        }
+    }
+}
